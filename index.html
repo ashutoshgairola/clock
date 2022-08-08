@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Orbitron"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      src="https://kit.fontawesome.com/cbaf5cde04.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            xs: "200px",
+            sm: "640px",
+            md: "768px",
+            lg: "1024px",
+            xl: "1280px",
+            "2xl": "1536px",
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="h-screen bg-stone-900 select-none font-['orbitron'] tracking-[0.4rem]"
+  >
+    <div
+      id="navbar"
+      class="w-screen flex justify-between items-center bg-black px-5 xs:py-2 text-5xl text-emerald-400"
+    >
+      <div class="pl-5 font-bold">
+        <div id="hourglass">
+          <svg
+            width="42px"
+            height="70px"
+            viewBox="0 0 73 88"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g id="hourglass">
+              <path
+                d="M63.8761664,86 C63.9491436,84.74063 64,83.4707791 64,82.1818182 C64,65.2090455 57.5148507,50.6237818 48.20041,44 C57.5148507,37.3762182 64,22.7909545 64,5.81818182 C64,4.52922091 63.9491436,3.25937 63.8761664,2 L10.1238336,2 C10.0508564,3.25937 10,4.52922091 10,5.81818182 C10,22.7909545 16.4851493,37.3762182 25.79959,44 C16.4851493,50.6237818 10,65.2090455 10,82.1818182 C10,83.4707791 10.0508564,84.74063 10.1238336,86 L63.8761664,86 Z"
+                id="glass"
+                fill="#E7E5E4 "
+              ></path>
+              <rect
+                id="top-plate"
+                fill="#57534e"
+                x="0"
+                y="0"
+                width="74"
+                height="8"
+                rx="2"
+              ></rect>
+              <rect
+                id="bottom-plate"
+                fill="#57534e"
+                x="0"
+                y="80"
+                width="74"
+                height="8"
+                rx="2"
+              ></rect>
+
+              <g id="top-sand" transform="translate(18, 21)">
+                <clipPath id="top-clip-path" fill="white">
+                  <rect x="0" y="0" width="38" height="21"></rect>
+                </clipPath>
+
+                <path
+                  fill="#34D399"
+                  clip-path="url(#top-clip-path)"
+                  d="M38,0 C36.218769,7.51704545 24.818769,21 19,21 C13.418769,21 1.9,7.63636364 0,0 L38,0 Z"
+                ></path>
+              </g>
+
+              <g id="bottom-sand" transform="translate(18, 55)">
+                <clipPath id="bottom-clip-path" fill="white">
+                  <rect x="0" y="0" width="38" height="21"></rect>
+                </clipPath>
+
+                <g clip-path="url(#bottom-clip-path)">
+                  <path
+                    fill="#34D399"
+                    d="M0,21 L38,21 C36.1,13.3636364 24.581231,0 19,0 C13.181231,0 1.781231,13.4829545 0,21 Z"
+                  ></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="pl-10 font-bold xs:hidden">
+        <div id="hourglass">
+          <svg
+            width="50px"
+            height="88px"
+            viewBox="0 0 73 88"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g id="hourglass">
+              <path
+                d="M63.8761664,86 C63.9491436,84.74063 64,83.4707791 64,82.1818182 C64,65.2090455 57.5148507,50.6237818 48.20041,44 C57.5148507,37.3762182 64,22.7909545 64,5.81818182 C64,4.52922091 63.9491436,3.25937 63.8761664,2 L10.1238336,2 C10.0508564,3.25937 10,4.52922091 10,5.81818182 C10,22.7909545 16.4851493,37.3762182 25.79959,44 C16.4851493,50.6237818 10,65.2090455 10,82.1818182 C10,83.4707791 10.0508564,84.74063 10.1238336,86 L63.8761664,86 Z"
+                id="glass"
+                fill="#E7E5E4 "
+              ></path>
+              <rect
+                id="top-plate"
+                fill="#57534e"
+                x="0"
+                y="0"
+                width="74"
+                height="8"
+                rx="2"
+              ></rect>
+              <rect
+                id="bottom-plate"
+                fill="#57534e"
+                x="0"
+                y="80"
+                width="74"
+                height="8"
+                rx="2"
+              ></rect>
+
+              <g id="top-sand" transform="translate(18, 21)">
+                <clipPath id="top-clip-path" fill="white">
+                  <rect x="0" y="0" width="38" height="21"></rect>
+                </clipPath>
+
+                <path
+                  fill="#34D399"
+                  clip-path="url(#top-clip-path)"
+                  d="M38,0 C36.218769,7.51704545 24.818769,21 19,21 C13.418769,21 1.9,7.63636364 0,0 L38,0 Z"
+                ></path>
+              </g>
+
+              <g id="bottom-sand" transform="translate(18, 55)">
+                <clipPath id="bottom-clip-path" fill="white">
+                  <rect x="0" y="0" width="38" height="21"></rect>
+                </clipPath>
+
+                <g clip-path="url(#bottom-clip-path)">
+                  <path
+                    fill="#34D399"
+                    d="M0,21 L38,21 C36.1,13.3636364 24.581231,0 19,0 C13.181231,0 1.781231,13.4829545 0,21 Z"
+                  ></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="sm:hidden" id="burger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div class="sm:flex text-xl font-medium space-x-6 xs:hidden">
+        <div
+          class="cursor-pointer p-5 text-emerald-400 hover:font-bold border-b-4 border-emerald-400"
+        >
+          <a href="index.html">Clock</a>
+        </div>
+        <div class="cursor-pointer p-5 text-emerald-400 hover:font-bold">
+          <a href="timer.html">Timer</a>
+        </div>
+        <div class="cursor-pointer p-5 text-emerald-400 hover:font-bold">
+          <a href="stopwatch.html">StopWatch</a>
+        </div>
+        <div class="cursor-pointer p-5 text-emerald-400 hover:font-bold">
+          History
+        </div>
+      </div>
+
+      <div
+        id="menu"
+        class="hidden h-full w-[70%] select-none opacity-90 fixed z-20 right-0 top-0 z-10 bg-black font-bold text-emerald-400 py-4 space-y-10"
+      >
+        <div id="close" class="text-right px-8 text-5xl pb-4">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div
+          class="cursor-pointer p-4 text-xl font-bold border-l-4 border-emerald-400"
+        >
+          <a href="index.html"
+            >Clock <i class="text-3xl fa-solid fa-clock"></i
+          ></a>
+        </div>
+        <div class="cursor-pointer p-4 text-xl font-medium hover:font-bold">
+          <a href="timer.html"
+            >Timer <i class="text-3xl fa-solid fa-hourglass-half"></i
+          ></a>
+        </div>
+        <div class="cursor-pointer p-4 text-xl font-medium hover:font-bold">
+          <a href="stopwatch.html"
+            >StopWatch <i class="text-3xl fa-solid fa-stopwatch"></i
+          ></a>
+        </div>
+        <div class="cursor-pointer p-4 text-xl font-medium hover:font-bold">
+          History <i class="text-3xl fa-solid fa-clock-rotate-left"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- clock -->
+
+    <div class="flex sm:my-10 xs:my-28 justify-center space-x-40">
+      <div class="flex justify-center items-center relative">
+        <div class="absolute z-10 rounded-2xl w-4 h-4 bg-stone-400"></div>
+        <div
+          class="absolute flex z-0 sm:top-[10.5rem] xs:top-[7.9rem] w-[0.55rem] sm:h-[7rem] xs:h-[4.5rem] bg-emerald-400 origin-bottom"
+          id="hr"
+        ></div>
+        <div
+          class="absolute z-0 sm:top-[8.1rem] xs:top-[7.1rem] w-[0.45rem] sm:h-[9.5rem] xs:h-[5.5rem] bg-emerald-400 origin-bottom"
+          id="min"
+        ></div>
+        <div
+          class="absolute z-0 sm:top-[7rem] xs:top-[5.4rem] w-[0.3rem] sm:h-[13rem] xs:h-[8.5rem] bg-red-500 origin-[center_81%]"
+          id="sec"
+        ></div>
+        <div
+          class="absolute text-4xl bg-stone-900 text-emerald-400 sm:top-10 xs:top-5"
+        >
+          12
+        </div>
+        <div
+          class="absolute text-4xl bg-stone-900 text-emerald-400 top-50 sm:right-10 xs:right-5"
+        >
+          3
+        </div>
+        <div
+          class="absolute text-4xl bg-stone-900 text-emerald-400 top-50 sm:left-10 xs:left-5"
+        >
+          9
+        </div>
+        <div
+          class="absolute text-4xl bg-stone-900 text-emerald-400 sm:bottom-10 xs:bottom-5"
+        >
+          6
+        </div>
+        <img class="w-[35rem]" src="images/clock.png" alt="" />
+      </div>
+
+      <div class="sm:block w-[36%] text-stone-200 xs:hidden text-center">
+        <div class="mt-14 text-3xl">
+          Hey, I'm <span class="text-emerald-400">Hour</span>glass.
+        </div>
+        <div class="mt-5 text-xl">
+          I keep track of <span class="text-emerald-400">time</span>.
+        </div>
+        <div class="mt-20 ml-20">
+          <div id="hourglass">
+            <svg
+              width="400px"
+              height="270px"
+              viewBox="0 0 73 88"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <g id="hourglass">
+                <path
+                  d="M63.8761664,86 C63.9491436,84.74063 64,83.4707791 64,82.1818182 C64,65.2090455 57.5148507,50.6237818 48.20041,44 C57.5148507,37.3762182 64,22.7909545 64,5.81818182 C64,4.52922091 63.9491436,3.25937 63.8761664,2 L10.1238336,2 C10.0508564,3.25937 10,4.52922091 10,5.81818182 C10,22.7909545 16.4851493,37.3762182 25.79959,44 C16.4851493,50.6237818 10,65.2090455 10,82.1818182 C10,83.4707791 10.0508564,84.74063 10.1238336,86 L63.8761664,86 Z"
+                  id="glass"
+                  fill="#E7E5E4 "
+                ></path>
+                <rect
+                  id="top-plate"
+                  fill="#57534e"
+                  x="0"
+                  y="0"
+                  width="74"
+                  height="8"
+                  rx="2"
+                ></rect>
+                <rect
+                  id="bottom-plate"
+                  fill="#57534e"
+                  x="0"
+                  y="80"
+                  width="74"
+                  height="8"
+                  rx="2"
+                ></rect>
+
+                <g id="top-sand" transform="translate(18, 21)">
+                  <clipPath id="top-clip-path" fill="white">
+                    <rect x="0" y="0" width="38" height="21"></rect>
+                  </clipPath>
+
+                  <path
+                    fill="#34D399"
+                    clip-path="url(#top-clip-path)"
+                    d="M38,0 C36.218769,7.51704545 24.818769,21 19,21 C13.418769,21 1.9,7.63636364 0,0 L38,0 Z"
+                  ></path>
+                </g>
+
+                <g id="bottom-sand" transform="translate(18, 55)">
+                  <clipPath id="bottom-clip-path" fill="white">
+                    <rect x="0" y="0" width="38" height="21"></rect>
+                  </clipPath>
+
+                  <g clip-path="url(#bottom-clip-path)">
+                    <path
+                      fill="#34D399"
+                      d="M0,21 L38,21 C36.1,13.3636364 24.581231,0 19,0 C13.181231,0 1.781231,13.4829545 0,21 Z"
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- clock phone  -->
+    <!-- <div class="xs:flex sm:hidden justify-center items-center relative">
+      <div class="absolute z-10 rounded-2xl w-4 h-4 bg-stone-400"></div>
+      <div
+        class="absolute flex z-7 top-[9.3rem] w-[0.55rem] h-[4.1rem] bg-emerald-400 origin-bottom"
+        id="hr"
+      ></div>
+      <div
+        class="absolute z-8 top-[7.6rem] w-[0.45rem] h-[5rem] bg-emerald-400 origin-bottom"
+        id="min"
+      ></div>
+      <div
+        class="absolute z-9 top-[6rem] w-[0.3rem] h-[7rem] bg-red-500 origin-[center_81%]"
+        id="sec"
+      ></div>
+      <div class="absolute text-4xl bg-stone-900 text-emerald-400 top-5">
+        12
+      </div>
+      <div
+        class="absolute text-4xl bg-stone-900 text-emerald-400 top-50 right-5"
+      >
+        3
+      </div>
+      <div
+        class="absolute text-4xl bg-stone-900 text-emerald-400 top-50 left-5"
+      >
+        9
+      </div>
+      <div class="absolute text-4xl bg-stone-900 text-emerald-400 bottom-5">
+        6
+      </div>
+      <img class="w-[35rem]" src="images/clock.png" alt="" />
+    </div> -->
+    <script src="index.js"></script>
+  </body>
+</html>
